@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>4K Capture Support</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #15202b;
+      --muted: #536471;
+      --accent: #0f766e;
+      --border: #d6e2ea;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(circle at top, #e9f6f3 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 10px 24px rgba(15, 118, 110, 0.08);
+    }
+
+    h1, h2 { line-height: 1.2; }
+    h1 { margin-top: 0; font-size: 2rem; }
+    h2 { margin-top: 1.8rem; color: var(--accent); font-size: 1.25rem; }
+    .muted { color: var(--muted); }
+    .todo {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fff7d9;
+      color: #7a5b00;
+      font-size: 0.92rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="card">
+      <h1>4K Capture Support</h1>
+      <p class="muted">Support page for capture workflows involving capture cards, game consoles, cameras, webcams, and other HDMI sources on Windows.</p>
+
+      <h2>Contact</h2>
+      <p>Support email: <strong>h3r2015@gmail.com</strong></p>
+
+      <h2>Recommended information to include in a support request</h2>
+      <ul>
+        <li>Windows version</li>
+        <li>Capture device model</li>
+        <li>Source type, for example game console, camera, TV box, or webcam</li>
+        <li>Audio device model</li>
+        <li>Whether the issue happens in portable, setup, or MSIX build</li>
+        <li>Steps to reproduce the issue</li>
+        <li>A screenshot or short screen recording if possible</li>
+      </ul>
+
+      <h2>Common checks</h2>
+      <ul>
+        <li>Reconnect the capture card directly to a stable USB 3.x or PCIe connection</li>
+        <li>Close other apps that may already be using the webcam or capture device</li>
+        <li>If you are using a game console or another HDMI source, make sure the source output matches a mode supported by the capture card</li>
+        <li>If 4K60 is unstable, try 4K30 or 1080p60 first</li>
+        <li>If automatic audio selection is wrong, choose the audio input manually</li>
+        <li>Update GPU drivers and capture device drivers when needed</li>
+      </ul>
+
+      <h2>ADB remote notes</h2>
+      <ul>
+        <li>The target Android TV or TV box must have network ADB enabled</li>
+        <li>The app can scan the local network for reachable ADB endpoints</li>
+        <li>The bundled `adb.exe` helper is included only for the optional remote feature</li>
+      </ul>
+
+      <h2>Privacy</h2>
+      <p>See the privacy policy page for details about local settings, recordings, and optional logs.</p>
+    </div>
+  </main>
+</body>
+</html>
