@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>4K Capture</title>
+  <title>4K Capture - Low Latency HDMI Preview</title>
   <style>
     :root {
-      --bg: #f3efe6;
-      --panel: #fffdfa;
-      --text: #181613;
-      --muted: #665f56;
-      --accent: #116466;
+      --bg: #f5f1e8;
+      --panel: #fffdf8;
+      --text: #1c1a17;
+      --muted: #5f574e;
+      --accent: #1f6f78;
       --accent-2: #d9b44a;
-      --border: #d8cfbf;
+      --border: #d9cfbf;
     }
 
     * { box-sizing: border-box; }
@@ -21,163 +21,207 @@
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(circle at top right, rgba(17, 100, 102, 0.10), transparent 28%),
-        linear-gradient(180deg, #efe7d7 0%, var(--bg) 100%);
+      background: linear-gradient(180deg, #ede6d7 0%, var(--bg) 100%);
+      min-height: 100vh;
     }
 
     main {
-      max-width: 980px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 40px 20px 72px;
+      padding: 60px 20px 80px;
     }
 
     .hero {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 32px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+      text-align: center;
+      margin-bottom: 60px;
     }
 
     .badge {
       display: inline-block;
-      margin-bottom: 12px;
-      padding: 6px 12px;
+      margin-bottom: 16px;
+      padding: 6px 16px;
       border-radius: 999px;
-      background: rgba(17, 100, 102, 0.10);
+      background: rgba(31, 111, 120, 0.1);
       color: var(--accent);
-      font-size: 0.92rem;
-      font-weight: 600;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    h1, h2 { line-height: 1.15; }
-    h1 { margin: 0 0 12px; font-size: clamp(2rem, 4vw, 3.4rem); }
-    h2 { margin: 0 0 10px; color: var(--accent); font-size: 1.3rem; }
-    p { line-height: 1.65; }
-    .muted { color: var(--muted); }
+    h1 {
+      margin: 0 0 20px;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.1;
+      font-weight: 800;
+      color: var(--text);
+    }
 
-    .actions,
+    .hero-desc {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
     .grid {
       display: grid;
-      gap: 16px;
-    }
-
-    .actions {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      margin-top: 24px;
-    }
-
-    .grid {
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      margin-top: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
     }
 
     .card {
       background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 22px;
-    }
-
-    a.button,
-    a.link-card {
+      border-radius: 20px;
+      padding: 32px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
       text-decoration: none;
       color: inherit;
     }
 
-    a.button {
-      display: block;
-      padding: 16px 18px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, #ffffff 0%, #f8f4ec 100%);
-      font-weight: 700;
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      border-color: var(--accent);
     }
 
-    a.button strong {
-      display: block;
+    .card h2 {
+      margin: 0 0 12px;
       color: var(--accent);
-      margin-bottom: 6px;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    a.link-card {
-      display: block;
-      height: 100%;
-    }
-
-    ul {
-      margin: 10px 0 0;
-      padding-left: 20px;
-    }
-
-    .footer-note {
-      margin-top: 28px;
-      padding: 14px 16px;
-      border-left: 4px solid var(--accent-2);
-      background: rgba(217, 180, 74, 0.10);
-      border-radius: 10px;
+    .card p {
+      margin: 0;
+      line-height: 1.6;
       color: var(--muted);
+      flex-grow: 1;
+    }
+
+    .card-footer {
+      margin-top: 20px;
+      font-weight: 600;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dev-section {
+      margin-top: 80px;
+      padding: 32px;
+      background: rgba(31, 111, 120, 0.05);
+      border: 1px dashed var(--border);
+      border-radius: 20px;
+    }
+
+    .dev-section h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .dev-section ul {
+      margin: 15px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .dev-section li {
+      margin-bottom: 8px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      main { padding-top: 40px; }
+      h1 { font-size: 2.2rem; }
     }
   </style>
 </head>
 <body>
   <main>
-    <section class="hero">
+    <header class="hero">
       <span class="badge">4K Capture</span>
-      <h1>Low-latency preview and recording for capture cards, game consoles, and HDMI sources on Windows</h1>
-      <p class="muted">
-        This lightweight public page is ready for Store submission use. Host the
-        <code>docs</code> folder on any static web host and use the generated URLs for
-        Microsoft Store support and privacy fields.
+      <h1>Ultra-low latency preview & recording on Windows</h1>
+      <p class="hero-desc">
+        A lightweight native WinUI application designed for capture cards, game consoles, and HDMI sources.
+        Optimized for performance and ease of use.
       </p>
-
-      <div class="actions">
-        <a class="button" href="./privacy-policy.html">
-          <strong>Privacy Policy</strong>
-          Review the app's current local-first privacy behavior
-        </a>
-        <a class="button" href="./support.html">
-          <strong>Support</strong>
-          Share contact details and troubleshooting guidance
-        </a>
-      </div>
-    </section>
+    </header>
 
     <section class="grid">
-      <a class="link-card" href="./privacy-policy.html">
-        <div class="card">
-          <h2>Privacy</h2>
-          <p class="muted">
-            Covers local settings, recordings, optional logs, device access, and optional
-            local network ADB usage based on the current repository behavior.
-          </p>
-        </div>
+      <a class="card" href="./updates.html">
+        <h2>
+          <span>🕒</span>
+          Update Log
+        </h2>
+        <p>
+          Stay informed about the latest features, performance improvements, and bug fixes.
+          View our release history from v1.0.0 to the current version.
+        </p>
+        <div class="card-footer">View changes →</div>
       </a>
 
-      <a class="link-card" href="./support.html">
-        <div class="card">
-          <h2>Support</h2>
-          <p class="muted">
-            Includes support contact details, recommended bug-report details, quick checks,
-            and notes for console, HDMI, and ADB-related troubleshooting.
-          </p>
-        </div>
+      <a class="card" href="./privacy-policy.html">
+        <h2>
+          <span>🛡️</span>
+          Privacy Policy
+        </h2>
+        <p>
+          We value your privacy. Learn how 4K Capture handles your local data, recordings,
+          and hardware access. Available in both English and Vietnamese.
+        </p>
+        <div class="card-footer">Read policy →</div>
       </a>
 
-      <div class="card">
-        <h2>Suggested Next Step</h2>
-        <ul>
-          <li>Push this repo to GitHub and enable the included GitHub Pages workflow</li>
-          <li>Use the hosted <code>privacy-policy.html</code> and <code>support.html</code> URLs in Partner Center</li>
-        </ul>
-      </div>
+      <a class="card" href="./support.html">
+        <h2>
+          <span>💬</span>
+          Support
+        </h2>
+        <p>
+          Need help? Find troubleshooting guides for capture cards, audio setup, and
+          HDMI sources, or get in touch with our support team.
+        </p>
+        <div class="card-footer">Get support →</div>
+      </a>
     </section>
 
-    <p class="footer-note">
-      The Store listing can use these hosted
-      pages directly as the privacy policy and support URLs.
-    </p>
+    <section class="dev-section">
+      <h3>Developer & Store Resources</h3>
+      <p class="muted">
+        This repository is pre-configured with GitHub Pages. Use the hosted URLs below for
+        Microsoft Partner Center submission fields.
+      </p>
+      <ul>
+        <li><strong>Privacy URL:</strong> https://ycancook.github.io/4K-Capture/privacy-policy.html</li>
+        <li><strong>Support URL:</strong> https://ycancook.github.io/4K-Capture/support.html</li>
+        <li><strong>Note:</strong> Ensure the <code>docs</code> or <code>html</code> folder is properly linked in your Pages settings.</li>
+      </ul>
+    </section>
+
+    <footer>
+      &copy; 2026 4K Capture Project. Built with WinUI 3.
+    </footer>
   </main>
 </body>
 </html>
