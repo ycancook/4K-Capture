@@ -51,7 +51,7 @@
 
     h1 {
       margin: 0 0 20px;
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
       line-height: 1.1;
       font-weight: 800;
       color: var(--text);
@@ -94,17 +94,20 @@
     .card h2 {
       margin: 0 0 12px;
       color: var(--accent);
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       display: flex;
       align-items: center;
       gap: 10px;
+      word-break: break-word;
+      hyphens: auto;
     }
 
     .card p {
       margin: 0;
-      line-height: 1.6;
+      line-height: 1.5;
       color: var(--muted);
       flex-grow: 1;
+      font-size: 0.95rem;
     }
 
     .card-footer {
@@ -116,39 +119,36 @@
       gap: 6px;
     }
 
-    .dev-section {
+    .lang-section {
       margin-top: 80px;
-      padding: 32px;
-      background: rgba(31, 111, 120, 0.05);
-      border: 1px dashed var(--border);
-      border-radius: 20px;
-    }
-
-    .dev-section h3 {
-      margin-top: 0;
-      font-size: 1.1rem;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .dev-section ul {
-      margin: 15px 0 0;
-      padding-left: 20px;
-      color: var(--muted);
-    }
-
-    .dev-section li {
-      margin-bottom: 8px;
+      border-top: 1px solid var(--border);
+      padding-top: 60px;
     }
 
     footer {
       text-align: center;
-      margin-top: 60px;
+      margin-top: 80px;
       padding: 20px;
       border-top: 1px solid var(--border);
       color: var(--muted);
       font-size: 0.9rem;
+    }
+
+    .lang-switcher {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .lang-switcher a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
     }
 
     @media (max-width: 600px) {
@@ -159,65 +159,129 @@
 </head>
 <body>
   <main>
-    <header class="hero">
-      <span class="badge">4K Capture</span>
-      <h1>Ultra-low latency preview & recording on Windows</h1>
-      <p class="hero-desc">
-        A lightweight native WinUI application designed for capture cards, game consoles, and HDMI sources.
-        Optimized for performance and ease of use.
-      </p>
-    </header>
+    <nav class="lang-switcher">
+      <a href="#english">English</a>
+      <a href="#vietnamese">Tiếng Việt</a>
+      <a href="#chinese">中文</a>
+      <a href="#russian">Русский</a>
+    </nav>
 
-    <section class="grid">
-      <a class="card" href="./updates.html">
-        <h2>
-          <span>🕒</span>
-          Update Log
-        </h2>
-        <p>
-          Stay informed about the latest features, performance improvements, and bug fixes.
-          View our release history from v1.0.0 to the current version.
+    <!-- ENGLISH SECTION -->
+    <div id="english">
+      <header class="hero">
+        <span class="badge">4K Capture</span>
+        <h1>Ultra-low latency preview & recording on Windows</h1>
+        <p class="hero-desc">
+          A lightweight native WinUI application designed for capture cards, game consoles, and HDMI sources.
+          Optimized for performance and ease of use.
         </p>
-        <div class="card-footer">View changes →</div>
-      </a>
+      </header>
 
-      <a class="card" href="./privacy-policy.html">
-        <h2>
-          <span>🛡️</span>
-          Privacy Policy
-        </h2>
-        <p>
-          We value your privacy. Learn how 4K Capture handles your local data, recordings,
-          and hardware access. Available in both English and Vietnamese.
+      <section class="grid">
+        <a class="card" href="./updates.html">
+          <h2><span>🕒</span> Update Log</h2>
+          <p>Stay informed about the latest features, performance improvements, and bug fixes.</p>
+          <div class="card-footer">View changes →</div>
+        </a>
+        <a class="card" href="./privacy-policy.html">
+          <h2><span>🛡️</span> Privacy Policy</h2>
+          <p>Learn how 4K Capture handles your local data, recordings, and hardware access.</p>
+          <div class="card-footer">Read policy →</div>
+        </a>
+        <a class="card" href="./support.html">
+          <h2><span>💬</span> Support</h2>
+          <p>Troubleshooting guides for capture cards, audio setup, and HDMI sources.</p>
+          <div class="card-footer">Get support →</div>
+        </a>
+      </section>
+    </div>
+
+    <div class="lang-section" id="vietnamese">
+      <header class="hero">
+        <span class="badge">4K Capture</span>
+        <h1>Xem trước & ghi hình độ trễ cực thấp trên Windows</h1>
+        <p class="hero-desc">
+          Ứng dụng WinUI thuần nhẹ nhàng thiết kế cho capture card, máy chơi game và nguồn HDMI.
+          Tối ưu hiệu năng và dễ sử dụng.
         </p>
-        <div class="card-footer">Read policy →</div>
-      </a>
+      </header>
 
-      <a class="card" href="./support.html">
-        <h2>
-          <span>💬</span>
-          Support
-        </h2>
-        <p>
-          Need help? Find troubleshooting guides for capture cards, audio setup, and
-          HDMI sources, or get in touch with our support team.
+      <section class="grid">
+        <a class="card" href="./updates.html#vietnamese">
+          <h2><span>🕒</span> Nhật ký cập nhật</h2>
+          <p>Cập nhật các tính năng mới nhất, cải thiện hiệu năng và sửa lỗi phần mềm.</p>
+          <div class="card-footer">Xem thay đổi →</div>
+        </a>
+        <a class="card" href="./privacy-policy.html">
+          <h2><span>🛡️</span> Chính sách bảo mật</h2>
+          <p>Tìm hiểu cách 4K Capture xử lý dữ liệu, bản ghi và quyền truy cập phần cứng.</p>
+          <div class="card-footer">Đọc chính sách →</div>
+        </a>
+        <a class="card" href="./support.html#vietnamese">
+          <h2><span>💬</span> Hỗ trợ</h2>
+          <p>Hướng dẫn khắc phục lỗi capture card, cài đặt âm thanh và nguồn HDMI.</p>
+          <div class="card-footer">Nhận hỗ trợ →</div>
+        </a>
+      </section>
+    </div>
+
+    <div class="lang-section" id="chinese">
+      <header class="hero">
+        <span class="badge">4K Capture</span>
+        <h1>Windows 上的超低延迟预览和录制</h1>
+        <p class="hero-desc">
+          专为采集卡、游戏机和 HDMI 源设计的轻量级原生 WinUI 应用程序。
+          针对性能和易用性进行了优化。
         </p>
-        <div class="card-footer">Get support →</div>
-      </a>
-    </section>
+      </header>
 
-    <section class="dev-section">
-      <h3>Developer & Store Resources</h3>
-      <p class="muted">
-        This repository is pre-configured with GitHub Pages. Use the hosted URLs below for
-        Microsoft Partner Center submission fields.
-      </p>
-      <ul>
-        <li><strong>Privacy URL:</strong> https://ycancook.github.io/4K-Capture/privacy-policy.html</li>
-        <li><strong>Support URL:</strong> https://ycancook.github.io/4K-Capture/support.html</li>
-        <li><strong>Note:</strong> Ensure the <code>docs</code> or <code>html</code> folder is properly linked in your Pages settings.</li>
-      </ul>
-    </section>
+      <section class="grid">
+        <a class="card" href="./updates.html#chinese">
+          <h2><span>🕒</span> 更新日志</h2>
+          <p>了解最新功能、性能改进和错误修复。</p>
+          <div class="card-footer">查看更改 →</div>
+        </a>
+        <a class="card" href="./privacy-policy.html">
+          <h2><span>🛡️</span> 隐私政策</h2>
+          <p>了解 4K Capture 如何处理您的本地数据、录制内容和硬件访问。</p>
+          <div class="card-footer">阅读政策 →</div>
+        </a>
+        <a class="card" href="./support.html#chinese">
+          <h2><span>💬</span> 支持</h2>
+          <p>采集卡、音频设置和 HDMI 源的故障排除指南。</p>
+          <div class="card-footer">获取支持 →</div>
+        </a>
+      </section>
+    </div>
+
+    <div class="lang-section" id="russian">
+      <header class="hero">
+        <span class="badge">4K Capture</span>
+        <h1>Предварительный просмотр и запись с ультранизкой задержкой на Windows</h1>
+        <p class="hero-desc">
+          Легкое нативное приложение WinUI, разработанное для карт захвата, игровых консолей и источников HDMI.
+          Оптимизировано для производительности и простоты использования.
+        </p>
+      </header>
+
+      <section class="grid">
+        <a class="card" href="./updates.html#russian">
+          <h2><span>🕒</span> Журнал обновлений</h2>
+          <p>Будьте в курсе последних функций, улучшений производительности и исправлений ошибок.</p>
+          <div class="card-footer">Просмотреть изменения →</div>
+        </a>
+        <a class="card" href="./privacy-policy.html">
+          <h2><span>🛡️</span> Конфиденциальность</h2>
+          <p>Узнайте, как 4K Capture обрабатывает ваши локальные данные, записи и доступ к оборудованию.</p>
+          <div class="card-footer">Читать политику →</div>
+        </a>
+        <a class="card" href="./support.html#russian">
+          <h2><span>💬</span> Поддержка</h2>
+          <p>Руководства по устранению неполадок для карт захвата, настройки звука и источников HDMI.</p>
+          <div class="card-footer">Получить поддержку →</div>
+        </a>
+      </section>
+    </div>
 
     <footer>
       &copy; 2026 4K Capture Project. Built with WinUI 3.

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>4K Capture Update Log</title>
+  <title>4K Capture - Update Log</title>
   <style>
     :root {
       --bg: #f5f1e8;
@@ -36,13 +36,14 @@
       border-radius: 18px;
       padding: 28px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      margin-bottom: 40px;
     }
 
     h1, h2, h3 { line-height: 1.2; }
-    h1 { margin-top: 0; font-size: 2rem; }
-    h2 { margin-top: 2rem; font-size: 1.35rem; color: var(--accent); }
-    h3 { margin-top: 1.4rem; font-size: 1.05rem; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
-    p, li { color: var(--text); }
+    h1 { margin-top: 0; font-size: 1.8rem; word-break: break-word; }
+    h2 { margin-top: 2rem; font-size: 1.2rem; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 8px; display: inline-block; }
+    h3 { margin-top: 1.4rem; font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    p, li { color: var(--text); font-size: 0.95rem; }
     .muted { color: var(--muted); }
 
     .version-tag {
@@ -81,12 +82,42 @@
     .back-link:hover {
       text-decoration: underline;
     }
+
+    .lang-nav {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .lang-nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding: 4px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+    }
+
+    .lang-nav a:hover {
+      background: rgba(31, 111, 120, 0.05);
+      color: var(--accent);
+    }
   </style>
 </head>
 <body>
   <main>
     <a href="./index.html" class="back-link">← Back to Home</a>
-    <div class="card">
+
+    <nav class="lang-nav">
+      <a href="#english">English</a>
+      <a href="#vietnamese">Tiếng Việt</a>
+      <a href="#chinese">中文 (简体)</a>
+      <a href="#russian">Русский</a>
+    </nav>
+
+    <div class="card" id="english">
       <h1>Update Log</h1>
       <p class="muted">Recent changes and improvements for the 4K Capture application.</p>
 
@@ -99,7 +130,8 @@
         </h3>
         <ul>
           <li>Fixed minor functional issues and strengthened the user interface.</li>
-          <li>Added support for additional application languages.</li>
+          <li>Added support for additional application languages (Chinese, Russian).</li>
+          <li>Optimized internal resources to reduce application size.</li>
         </ul>
       </section>
 
@@ -126,7 +158,6 @@
           <li>Added snapshot capability for live video and refined keyboard shortcuts for a smoother experience.</li>
           <li>Integrated File Manager for Remote ADB: Browse, select, and play music/videos directly on your TV or Android devices.</li>
           <li>Support for continuous playlist playback on ADB-connected devices.</li>
-          <li>More exciting features and improvements are on the way! Thank you for purchasing and supporting our application!</li>
         </ul>
       </section>
 
@@ -139,65 +170,143 @@
           <li>Fully resolved black flickering issues when the app window overlaps video playback in browsers (YouTube, Facebook, etc.).</li>
           <li>Added the ability to switch Remote position (Left/Right) and optimized the UI to prevent blocking TV content.</li>
           <li>Introduced List View mode for apps and a dedicated filter for system applications.</li>
-          <li>Improved uninstallation: Added support for system apps and preserved scroll position after removal.</li>
-          <li>Added customizable keyboard shortcuts that can be modified directly within the Usage Guide.</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="card" id="vietnamese">
+      <h1>Nhật ký cập nhật</h1>
+      <p class="muted">Các thay đổi và cải tiến gần đây cho ứng dụng 4K Capture.</p>
+
+      <h2>Lịch sử phát hành</h2>
+
+      <section>
+        <h3>
+          <span class="version-tag">v1.0.7.0</span>
+          <span class="date">13/08/2026</span>
+        </h3>
+        <ul>
+          <li>Sửa các lỗi chức năng nhỏ và củng cố giao diện người dùng.</li>
+          <li>Bổ sung hỗ trợ ngôn ngữ mới (Tiếng Trung, Tiếng Nga).</li>
+          <li>Tối ưu hóa tài nguyên nội bộ để giảm dung lượng ứng dụng.</li>
         </ul>
       </section>
 
       <section>
         <h3>
-          <span class="version-tag">v1.0.3.0</span>
-          <span class="date">2026-06-04</span>
+          <span class="version-tag">v1.0.6.0</span>
+          <span class="date">20/07/2026</span>
         </h3>
         <ul>
-          <li>Fixed screen flickering issues when running alongside video game applications.</li>
-          <li>Optimized the virtual remote, adding features to make it behave more like a real hardware remote.</li>
-          <li>Automatically detects Webcams and disables live monitoring to prevent audio feedback.</li>
-          <li>Optimized audio latency (Low Latency) to achieve the best 1:1 sync between video and audio.</li>
-          <li>Fully resolved black flickering issues when app window overlaps browser video playback areas.</li>
+          <li>Thêm Remote nổi mini: Điều khiển TV nhanh chóng ngay trên khung hình video với khả năng tự động ẩn hiện theo chuột.</li>
+          <li>Hỗ trợ co giãn linh hoạt: Remote mini tự động thay đổi kích thước theo tỉ lệ cửa sổ, tối ưu hoàn hảo cho chế độ Cửa sổ nổi (PiP).</li>
+          <li>Thiết kế mượt mà: Giao diện bo tròn 'viên thuốc' hiện đại, ôm sát các nút bấm tạo cảm giác tinh tế.</li>
+          <li>Hỗ trợ ghim phím tắt ứng dụng ngay trên Remote mini để truy cập nhanh và khắc phục một số lỗi nhỏ.</li>
+          <li>Bổ sung hướng dẫn: Lưu ý về việc bật chế độ Nhà phát triển và ADB trên thiết bị TV để sử dụng Remote.</li>
         </ul>
       </section>
 
       <section>
         <h3>
-          <span class="version-tag">v1.0.2.0</span>
-          <span class="date">2026-04-22</span>
+          <span class="version-tag">v1.0.5.0</span>
+          <span class="date">25/06/2026</span>
         </h3>
         <ul>
-          <li>Usage Guide and Update Log now auto-hide when entering Mini overlay, and those menu actions are disabled there to prevent accidental opens.</li>
-          <li>Mini overlay now remembers its last position and size for the current app session, then resets to the default layout after the app is closed.</li>
-          <li>Fixed the loading cursor that could appear when returning from Mini overlay to the normal window.</li>
-          <li>Improved transition stability when switching between Mini overlay and the standard window.</li>
-          <li>Added Ctrl+H as a quick shortcut to hide the app to the taskbar. Pressing Ctrl+H while the app is hidden now restores the window.</li>
-          <li>In Mini overlay, Ctrl+H now works as a global hide/restore hotkey even while you're using another app.</li>
+          <li>Bổ sung chức năng chụp ảnh màn hình từ video đang phát và nâng cấp hệ thống phím tắt mượt mà hơn.</li>
+          <li>Thêm trình Quản lý tệp tin (File Manager) cho Remote ADB: Hỗ trợ duyệt file, chọn và phát nhạc/video trực tiếp lên TV.</li>
+          <li>Hỗ trợ phát danh sách nhạc (Playlist) liên tục trên thiết bị Android.</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="card" id="chinese">
+      <h1>更新日志</h1>
+      <p class="muted">4K Capture 应用程序的最近更改和改进。</p>
+
+      <h2>发布历史</h2>
+
+      <section>
+        <h3>
+          <span class="version-tag">v1.0.7.0</span>
+          <span class="date">2026-08-13</span>
+        </h3>
+        <ul>
+          <li>修复了细微的功能问题并强化了用户界面。</li>
+          <li>增加了对其他应用程序语言（中文、俄语）的支持。</li>
+          <li>优化了内部资源以减小应用程序的大小。</li>
         </ul>
       </section>
 
       <section>
         <h3>
-          <span class="version-tag">v1.0.1.0</span>
-          <span class="date">2026-04-18</span>
+          <span class="version-tag">v1.0.6.0</span>
+          <span class="date">2026-07-20</span>
         </h3>
         <ul>
-          <li>Improved capture recording reliability for webcams and compatible capture cards.</li>
-          <li>Fixed microphone selection and audio routing to reduce missing audio, duplicate audio, and echo.</li>
-          <li>Added Monitor Mode options: Off, Program only, Mic only, and Program + mic.</li>
-          <li>Added a clearer Usage Guide with Quick Start, audio notes, and app version display.</li>
+          <li>添加了迷你悬浮遥控器：在视频帧上直接进行快速电视控制，具有智能自动隐藏行为。</li>
+          <li>动态缩放：迷你遥控器根据窗口大小自动调整比例，非常适合画中画模式。</li>
+          <li>时尚设计：现代化的圆形胶囊界面，紧贴按钮，外观精致。</li>
+          <li>在迷你遥控器上增加了应用快捷方式固定功能，并修复了几个细微错误。</li>
+          <li>更新了使用指南：增加了关于在电视上启用开发者选项和 ADB 以便使用遥控器的重要说明。</li>
         </ul>
       </section>
 
       <section>
         <h3>
-          <span class="version-tag">v1.0.0.0</span>
-          <span class="date">2026-04-17</span>
+          <span class="version-tag">v1.0.5.0</span>
+          <span class="date">2026-06-25</span>
         </h3>
         <ul>
-          <li>First Microsoft Store release of 4K Capture.</li>
-          <li>Low-latency preview and MP4 recording for compatible capture devices and webcams.</li>
-          <li>Quick device switching, fullscreen, mini overlay, volume controls, and optional Android TV remote.</li>
+          <li>增加了实时视频的截图功能，并优化了键盘快捷键以获得更流畅的体验。</li>
+          <li>为远程 ADB 集成了文件管理器：直接在电视或 Android 设备上浏览、选择和播放音乐/视频。</li>
+          <li>支持在 ADB 连接的设备上进行连续播放列表播放。</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="card" id="russian">
+      <h1>Журнал обновлений</h1>
+      <p class="muted">Последние изменения и улучшения приложения 4K Capture.</p>
+
+      <h2>История выпусков</h2>
+
+      <section>
+        <h3>
+          <span class="version-tag">v1.0.7.0</span>
+          <span class="date">13.08.2026</span>
+        </h3>
+        <ul>
+          <li>Исправлены мелкие функциональные ошибки и усилен пользовательский интерфейс.</li>
+          <li>Добавлена поддержка дополнительных языков (Китайский, Русский).</li>
+          <li>Оптимизированы внутренние ресурсы для уменьшения размера приложения.</li>
         </ul>
       </section>
 
+      <section>
+        <h3>
+          <span class="version-tag">v1.0.6.0</span>
+          <span class="date">20.07.2026</span>
+        </h3>
+        <ul>
+          <li>Добавлен мини-пульт: быстрое управление ТВ прямо на видеокадре с функцией автоскрытия.</li>
+          <li>Динамическое масштабирование: мини-пульт автоматически меняет размер пропорционально окну, идеально для режима PiP.</li>
+          <li>Современный дизайн: интерфейс в стиле "капсулы" для изящного вида.</li>
+          <li>Добавлена возможность закрепления приложений на мини-пульте и исправлено несколько мелких ошибок.</li>
+          <li>Обновлено руководство: добавлены важные заметки о включении ADB на ТВ для работы пульта.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>
+          <span class="version-tag">v1.0.5.0</span>
+          <span class="date">25.06.2026</span>
+        </h3>
+        <ul>
+          <li>Добавлена возможность создания скриншотов и улучшена система горячих клавиш.</li>
+          <li>Интегрирован файловый менеджер для ADB: просмотр и воспроизведение файлов прямо на ТВ.</li>
+          <li>Поддержка непрерывного воспроизведения плейлистов на устройствах с ADB.</li>
+        </ul>
+      </section>
     </div>
   </main>
 </body>

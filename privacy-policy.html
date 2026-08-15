@@ -36,120 +36,128 @@
       border-radius: 18px;
       padding: 28px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      margin-bottom: 30px;
     }
 
     h1, h2, h3 { line-height: 1.2; }
-    h1 { margin-top: 0; font-size: 2rem; }
-    h2 { margin-top: 2rem; font-size: 1.35rem; color: var(--accent); }
-    h3 { margin-top: 1.4rem; font-size: 1.05rem; }
-    p, li { color: var(--text); }
+    h1 { margin-top: 0; font-size: 1.8rem; word-break: break-word; }
+    h2 { margin-top: 2rem; font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 4px; }
+    h3 { margin-top: 1.4rem; font-size: 1rem; color: var(--text); font-weight: 700; }
+    p, li { color: var(--text); font-size: 0.95rem; }
     .muted { color: var(--muted); }
-    .todo {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 999px;
+
+    .lang-nav {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 10px;
+    }
+    .lang-nav a {
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 4px 12px;
+      background: white;
       border: 1px solid var(--border);
-      background: #fff6db;
-      color: #7a5b00;
-      font-size: 0.92rem;
+      border-radius: 6px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <main>
-    <div class="card">
+    <a href="./index.html" class="back-link">← Back to Home</a>
+    <nav class="lang-nav">
+      <a href="#english">EN</a>
+      <a href="#vietnamese">VI</a>
+      <a href="#chinese">ZH</a>
+      <a href="#russian">RU</a>
+    </nav>
+
+    <div class="card" id="english">
       <h1>4K Capture Privacy Policy</h1>
-      <p class="muted">Prepared from the current repository behavior and ready for public hosting. Review again if app behavior changes.</p>
+      <p class="muted">Effective date: April 17, 2026</p>
 
       <h2>English</h2>
-
       <h3>Overview</h3>
-      <p><strong>4K Capture</strong> is a Windows desktop application for local video preview, audio monitoring, and recording from capture cards and webcams. It can be used with game consoles, cameras, TV boxes, and other HDMI sources connected through a compatible capture card. The app also includes an optional Android TV remote feature over ADB.</p>
+      <p><strong>4K Capture</strong> is a Windows application for local video preview and recording from capture cards and webcams. All processing happens locally on your device.</p>
 
       <h3>Information we collect</h3>
-      <p>4K Capture does not require account registration and does not require you to sign in to use the app.</p>
-      <p>Based on the current implementation, the app does not send your recordings, device settings, or remote control text to a cloud service operated by us.</p>
+      <p>4K Capture does not require an account. We do not collect or transmit your recordings or settings to our servers.</p>
 
-      <h3>Information stored locally on your device</h3>
+      <h3>Local Storage</h3>
       <ul>
-        <li>Selected video, audio, and output devices</li>
-        <li>Preferred video mode and aspect settings</li>
-        <li>Language preference</li>
-        <li>Remote endpoint history for the optional ADB remote feature</li>
-        <li>Recording folder preference</li>
-        <li>Optional local diagnostic settings</li>
-        <li>Recorded MP4 files, local settings files, and optional local debug logs</li>
+        <li>Settings like device selection, language, and recording folder are stored locally.</li>
+        <li>Recorded files and snapshots are saved only to your chosen local directories.</li>
       </ul>
 
-      <h3>Device and hardware access</h3>
-      <ul>
-        <li>Camera or capture devices recognized by Windows</li>
-        <li>Microphone or other audio capture devices recognized by Windows</li>
-        <li>Local storage locations used for saving recordings and settings</li>
-      </ul>
+      <h3>Hardware Access</h3>
+      <p>The app requires access to your camera/capture card and microphone to function. These are used only for local preview and recording.</p>
+    </div>
 
-      <h3>Local network use</h3>
-      <p>If you use the optional ADB remote feature, the app may scan the local network for reachable ADB endpoints, connect to the Android TV, TV box, or other Android-based endpoint you choose, and send navigation, media, or text input commands to that device.</p>
-
-      <h3>Data sharing</h3>
-      <p>Based on the current implementation, 4K Capture does not sell personal data and does not intentionally share your local recordings or settings with third parties through an app-operated online service.</p>
-
-      <h3>Your choices</h3>
-      <ul>
-        <li>Use or do not use the optional ADB remote feature</li>
-        <li>Save or do not save recordings</li>
-        <li>Enable or disable optional local window state logging</li>
-        <li>Remove local settings by deleting local app data</li>
-      </ul>
-
-      <h3>Contact</h3>
-      <p>Support email: <strong>h3r2015@gmail.com</strong></p>
-      <p>Effective date: April 17, 2026</p>
-
+    <div class="card" id="vietnamese">
       <h2>Tiếng Việt</h2>
-
       <h3>Tổng quan</h3>
-      <p><strong>4K Capture</strong> là ứng dụng desktop trên Windows dùng để xem trước video cục bộ, nghe âm thanh, và ghi hình từ capture card và webcam. Ứng dụng có thể dùng với máy chơi game, camera, TV box, và các nguồn HDMI khác đi qua capture card tương thích. App cũng có thêm tính năng điều khiển Android TV tùy chọn qua ADB.</p>
+      <p><strong>4K Capture</strong> là ứng dụng Windows dùng để xem trước và ghi hình từ capture card và webcam. Mọi xử lý đều diễn ra cục bộ trên máy của bạn.</p>
 
-      <h3>Dữ liệu chúng tôi thu thập</h3>
-      <p>4K Capture không yêu cầu tạo tài khoản và không yêu cầu đăng nhập để sử dụng app.</p>
-      <p>Theo implementation hiện tại, app không gửi bản ghi, cài đặt thiết bị, hoặc nội dung text remote của bạn lên dịch vụ đám mây do chúng tôi vận hành.</p>
+      <h3>Dữ liệu thu thập</h3>
+      <p>Chúng tôi không yêu cầu tài khoản và không thu thập hay gửi bản ghi/cài đặt của bạn về máy chủ.</p>
 
-      <h3>Dữ liệu được lưu cục bộ trên máy</h3>
+      <h3>Lưu trữ cục bộ</h3>
       <ul>
-        <li>Thiết bị video, audio input, và output đã chọn</li>
-        <li>Chế độ video và tùy chọn aspect</li>
-        <li>Ngôn ngữ giao diện</li>
-        <li>Lịch sử remote endpoint cho tính năng ADB remote tùy chọn</li>
-        <li>Thư mục ghi hình ưu tiên</li>
-        <li>Một số cài đặt chẩn đoán cục bộ tùy chọn</li>
-        <li>File ghi MP4, file cài đặt cục bộ, và file log debug cục bộ tùy chọn</li>
+        <li>Các cài đặt như thiết bị, ngôn ngữ và thư mục lưu được lưu trên máy.</li>
+        <li>Bản ghi và ảnh chụp màn hình chỉ được lưu vào thư mục bạn đã chọn.</li>
       </ul>
 
-      <h3>Truy cập thiết bị và phần cứng</h3>
+      <h3>Truy cập phần cứng</h3>
+      <p>Ứng dụng cần quyền truy cập camera và micro để hoạt động. Quyền này chỉ dùng cho mục đích xem và ghi hình tại chỗ.</p>
+    </div>
+
+    <div class="card" id="chinese">
+      <h2>中文 (简体)</h2>
+      <h3>概述</h3>
+      <p><strong>4K Capture</strong> 是一款用于本地视频预览以及从采集卡和网络摄像头录制的 Windows 应用程序。所有处理均在您的设备上本地进行。</p>
+
+      <h3>我们收集的信息</h3>
+      <p>4K Capture 不需要账户。我们不会收集或将您的录制内容或设置传输到我们的服务器。</p>
+
+      <h3>本地存储</h3>
       <ul>
-        <li>Camera hoặc capture device được Windows nhận diện</li>
-        <li>Microphone hoặc audio capture device được Windows nhận diện</li>
-        <li>Vị trí lưu trữ cục bộ để lưu file ghi và cài đặt</li>
+        <li>设备选择、语言和录制文件夹等设置存储在本地。</li>
+        <li>录制的文件和快照仅保存到您选择的本地目录。</li>
       </ul>
 
-      <h3>Sử dụng mạng nội bộ</h3>
-      <p>Nếu bạn dùng tính năng ADB remote tùy chọn, app có thể quét mạng nội bộ để tìm ADB endpoint, kết nối tới Android TV, TV box, hoặc thiết bị Android hỗ trợ ADB do bạn chọn, và gửi phím điều hướng, phím media, hoặc văn bản tới thiết bị đó.</p>
+      <h3>硬件访问</h3>
+      <p>该应用程序需要访问您的摄像头/采集卡和麦克风才能运行。这些仅用于本地预览和录制。</p>
+    </div>
 
-      <h3>Chia sẻ dữ liệu</h3>
-      <p>Theo implementation hiện tại, 4K Capture không bán dữ liệu cá nhân và không có ý định chia sẻ bản ghi hoặc cài đặt cục bộ của bạn với bên thứ ba thông qua dịch vụ trực tuyến do chúng tôi vận hành.</p>
+    <div class="card" id="russian">
+      <h2>Русский</h2>
+      <h3>Обзор</h3>
+      <p><strong>4K Capture</strong> — это приложение для Windows, предназначенное для локального просмотра видео и записи с карт захвата и веб-камер. Вся обработка происходит локально на вашем устройстве.</p>
 
-      <h3>Lựa chọn của bạn</h3>
+      <h3>Сбор информации</h3>
+      <p>4K Capture не требует создания учетной записи. Мы не собираем и не передаем ваши записи или настройки на наши серверы.</p>
+
+      <h3>Локальное хранилище</h3>
       <ul>
-        <li>Có dùng tính năng ADB remote tùy chọn hay không</li>
-        <li>Có lưu bản ghi hay không</li>
-        <li>Có bật window state logging cục bộ hay không</li>
-        <li>Có thể xóa cài đặt cục bộ bằng cách xóa dữ liệu app trên máy</li>
+        <li>Настройки, такие как выбор устройства, язык и папка для записи, хранятся локально.</li>
+        <li>Записанные файлы и снимки экрана сохраняются только в выбранных вами локальных папках.</li>
       </ul>
 
-      <h3>Liên hệ</h3>
-      <p>Email hỗ trợ: <strong>h3r2015@gmail.com</strong></p>
-      <p>Ngày hiệu lực: 17/04/2026</p>
+      <h3>Доступ к оборудованию</h3>
+      <p>Для работы приложению требуется доступ к вашей камере/карте захвата и микрофону. Они используются только для локального просмотра и записи.</p>
     </div>
   </main>
 </body>
